@@ -55,9 +55,9 @@ def dias_desde_primero_enero(fecha):
     mes = fecha[2]
     año = fecha[1]
 
-    if mes <= 1:
+    if mes <= 1: #Si el mes es Enero solo es necesario contar los dias
         return dia - 1
-    elif bisiesto(año) and mes >=3:
+    elif bisiesto(año) and mes >=3: #La variable principal para el calculo se si el año es bisiesto
         cont = 0
         for x in range(mes - 1):
             cont += LIMITES_MENSUALES[x]
@@ -77,11 +77,11 @@ def dias_desde_primero_enero(fecha):
 #
 def dia_primero_enero(año):
     
-    if(año >= 1852):
+    if(año >= 1582):
         
         cantidad_de_dias_movidos_por_año = 0
 
-        numero_de_años = año-1851
+        numero_de_años = año-1581
         
         cantidad_de_dias_movidos_por_año += numero_de_años
 
