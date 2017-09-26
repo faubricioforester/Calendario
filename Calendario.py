@@ -64,11 +64,31 @@ def dias_desde_primero_enero(fecha):
 #Se toma de referencia el primer día válido viernes 1 enero 1582
 #
 def dia_primero_enero(año):
+    
     if(año >= 1852):
-        numero_de_años = año-1852
-        valor_viernes = 4
         
+        cantidad_de_dias_movidos_por_año = 0
+
+        numero_de_años = año-1851
+        
+        cantidad_de_dias_movidos_por_año += numero_de_años
+
+        print("numero de años: "+ str(numero_de_años))
+
+        cantidad_de_dias_movidos_por_año += (numero_de_años%4)
+
+        cantidad_de_dias_movidos_por_año -= (numero_de_años%400)
+
+        valor_viernes = 4
+
+        cantidad_de_dias_movidos_por_año += valor_viernes
+
+        dia_correspondiente = cantidad_de_dias_movidos_por_año%7
+        
+        print("El dia del primero de enero del año: "+str(año)+ " es "+ DIAS_DE_SEMANA[dia_correspondiente])
+
     else:
         print("Año introducido no válido")
+
     return 0
 
