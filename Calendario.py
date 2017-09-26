@@ -1,13 +1,14 @@
 
 LIMITES_MENSUALES = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
 VIGENCIA_CALENDARIO_GREGORIANO = 1582
+DIAS_DE_SEMANA = {0: "lunes", 1: "martes", 2: "miercoles", 3: "jueves", 4: "viernes", 5: "sabado", 6: "domingo"}
 
 #*Dado un año perteneciente al rango permitido, determinar si este es bisiesto. El
 #resultado debe ser un valor booleano, True o False.
 
 def bisiesto(año):
 
-    return (año % 4 == 0) and (año % 100 == 0) or (año % 400 == 0)
+    return (año % 4 == 0) and (año % 100 != 0) or (año % 400 == 0)
 
 #Dada una fecha, determinar si ésta es válida. El resultado debe ser un
 #valor booleano, True o False.
@@ -60,7 +61,14 @@ def dias_desde_primero_enero(fecha):
 #semana que le corresponde, con la siguiente codificación: 0 = domingo, 1 = lunes, 2 = martes, 3 =
 #miércoles, 4 = jueves, 5 = viernes, 6 = sábado. El resultado debe ser un número entero, conforme
 #a la codificación indicada.
+#Se toma de referencia el primer día válido viernes 1 enero 1582
+#
 def dia_primero_enero(año):
-
+    if(año >= 1852):
+        numero_de_años = año-1852
+        valor_viernes = 4
+        
+    else:
+        print("Año introducido no válido")
     return 0
 
