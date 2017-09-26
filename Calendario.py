@@ -8,7 +8,7 @@ DIAS_DE_SEMANA = {0: "lunes", 1: "martes", 2: "miercoles", 3: "jueves", 4: "vier
 
 def bisiesto(año):
 
-    return (año % 4 == 0) and (año % 100 != 0) or (año % 400 == 0)
+    return (año % 4 == 0) and (año % 100 == 0) or (año % 400 == 0)
 
 #Dada una fecha, determinar si ésta es válida. El resultado debe ser un
 #valor booleano, True o False.
@@ -55,7 +55,18 @@ def dias_desde_primero_enero(fecha):
     mes = fecha[2]
     año = fecha[1]
 
-    return True
+    if mes <= 1:
+        return dia - 1
+    elif bisiesto(año) and mes >=3:
+        cont = 0
+        for x in range(mes - 1):
+            cont += LIMITES_MENSUALES[x]
+        return cont + 1 + dia
+    else:
+        cont = 0
+        for x in range(mes - 1):
+            cont += LIMITES_MENSUALES[x]
+        return cont + dia
 
 #Dado un año perteneciente al rango permitido, determinar el día de la
 #semana que le corresponde, con la siguiente codificación: 0 = domingo, 1 = lunes, 2 = martes, 3 =
