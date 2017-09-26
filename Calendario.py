@@ -7,8 +7,11 @@ DIAS_DE_SEMANA = {0: "lunes", 1: "martes", 2: "miercoles", 3: "jueves", 4: "vier
 #resultado debe ser un valor booleano, True o False.
 
 def bisiesto(año):
+    if año % 100 == 0:
+        return (año % 4 == 0) and (año % 400 == 0)
+    else:
+        return año % 4 == 0
 
-    return (año % 4 == 0) and (año % 100 == 0) or (año % 400 == 0)
 
 #Dada una fecha, determinar si ésta es válida. El resultado debe ser un
 #valor booleano, True o False.
@@ -104,3 +107,4 @@ def dia_primero_enero(año):
 
     return 0
 
+print(bisiesto(1904))
