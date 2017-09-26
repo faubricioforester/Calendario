@@ -28,16 +28,20 @@ def fecha_es_valida(fecha):
 
 def dia_siguiente(fecha):
     if fecha_es_valida(fecha):
-        dias = fecha[3]
+        dia = fecha[3]
         mes = fecha[2]
         año = fecha[1]
-        
+
+        if fecha_es_valida(  dia + 1, mes, año ):
+            return dia + 1, mes, año
+        elif dia == 31 and mes == 12:
+            return 1, 1, año +1
+        else:
+            return 1, mes + 1, año
 
     else:
         print("La fecha ingresada no es valida")
 
-
-    return True
 
 #
 #Dada una fecha válida, determinar el número de días
