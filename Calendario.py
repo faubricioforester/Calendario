@@ -104,5 +104,3 @@ def dia_primero_enero(año):
 
     return 
 
-
-print(bisiesto(1904))
