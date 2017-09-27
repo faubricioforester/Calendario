@@ -31,3 +31,11 @@ for i in pruebasDesdePEnero:
         print("El número de dias que han pasado desde " + print_fecha(i) + " es " + str(dias_desde_primero_enero(i)))
     else:
         print("Fecha no valida :" + print_fecha(i))
+
+print("-------------")
+pruebasDiaPrimeroEnero = [2000, 2012, 1997, 1823, 2200]
+for c in pruebasDiaPrimeroEnero:
+    if c >= VIGENCIA_CALENDARIO_GREGORIANO:
+        print("El primero de enero del año " + str(c) + " es " + str(DIAS_DE_SEMANA[dia_primero_enero(c)]))
+    else:
+        print( "Año " + str(c) + "no valido")
