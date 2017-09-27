@@ -24,6 +24,7 @@ def fecha_es_valida(fecha):
             return dia <= 29
         else:
             return dia <= LIMITES_MENSUALES[mes]
+    return False
 
 
 #Dada una fecha válida, determinar la fecha del día siguiente. El resultado
