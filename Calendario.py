@@ -91,7 +91,8 @@ def dia_primero_enero(año):
         
         cantidad_de_dias_movidos_por_año += numero_de_años
 
-        cantidad_de_dias_movidos_por_año += (numero_de_años%4)
+        if (numero_de_años >= 4):
+            cantidad_de_dias_movidos_por_año += (numero_de_años%4)
 
         valor_viernes = 5
 
