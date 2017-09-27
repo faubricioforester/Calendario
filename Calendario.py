@@ -37,14 +37,14 @@ def dia_siguiente(fecha):
         mes = fecha[1]
         año = fecha[0]
 
-        if fecha_es_valida( ( dia + 1, mes, año) ):
-            x = (dia + 1, mes, año)
+        if fecha_es_valida( ( año, mes, dia +1 ) ):
+            x = ( año, mes,dia + 1)
             return x
         elif dia == 31 and mes == 12:
-            x = (1, 1, año +1)
+            x = (año +1, 1, 1)
             return x
         else:
-            return (1, mes + 1, año)
+            return (año, mes + 1, 1)
 
 
 

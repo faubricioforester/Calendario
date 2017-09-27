@@ -4,7 +4,7 @@ pruebasBisiesto = [2000, 2001, 2096, 2100, 2200]
 
 
 def print_fecha(fecha):
-    return str(fecha[2]) + "/" + str(fecha[1]) + "/" + str(fecha[0])
+    return str(fecha[0]) + "/" + str(fecha[1]) + "/" + str(fecha[2])
 
 
 for x in pruebasBisiesto:
