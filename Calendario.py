@@ -16,9 +16,9 @@ def bisiesto(año):
 #Dada una fecha, determinar si ésta es válida. El resultado debe ser un
 #valor booleano, True o False.
 def fecha_es_valida(fecha):
-    dia = fecha[3]
-    mes = fecha[2]
-    año = fecha[1]
+    dia = fecha[2]
+    mes = fecha[1]
+    año = fecha[0]
     if año >= VIGENCIA_CALENDARIO_GREGORIANO and mes <= 12:
         if bisiesto(año) and mes == 2:
             return dia <= 29
@@ -33,19 +33,19 @@ def fecha_es_valida(fecha):
 
 def dia_siguiente(fecha):
     if fecha_es_valida(fecha):
-        dia = fecha[3]
-        mes = fecha[2]
-        año = fecha[1]
+        dia = fecha[2]
+        mes = fecha[1]
+        año = fecha[0]
 
-        if fecha_es_valida(  dia + 1, mes, año ):
-            return dia + 1, mes, año
+        if fecha_es_valida( ( dia + 1, mes, año) ):
+            x = (dia + 1, mes, año)
+            return x
         elif dia == 31 and mes == 12:
-            return 1, 1, año +1
+            x = (1, 1, año +1)
+            return x
         else:
-            return 1, mes + 1, año
+            return (1, mes + 1, año)
 
-    else:
-        print("La fecha ingresada no es valida")
 
 
 #
@@ -55,9 +55,9 @@ def dia_siguiente(fecha):
 #número entero.
 #
 def dias_desde_primero_enero(fecha):
-    dia = fecha[3]
-    mes = fecha[2]
-    año = fecha[1]
+    dia = fecha[2]
+    mes = fecha[1]
+    año = fecha[0]
 
     if mes <= 1: #Si el mes es Enero solo es necesario contar los dias
         return dia - 1
