@@ -9,7 +9,7 @@ def print_fecha(fecha):
 
 for x in pruebasBisiesto:
     print("Año " + str(x) + " es Bisiesto? " + str(bisiesto(x)))
-
+print("-------------")
 pruebasEsFechaValida = [(2010, 3, 15), (1582, 3, 15), (1581, 3, 15), (2010, 13, 15), (2004, 2, 29), (2005, 2, 29)]
 
 for y in pruebasEsFechaValida:
@@ -22,9 +22,12 @@ for y in pruebasDiaSiguiente:
     if fecha_es_valida(y):
         print("El dia siguiente a " + print_fecha(y) + " es: " + print_fecha(dia_siguiente(y)))
     else:
-        print("Fecha no valida")
-
-pruebasDesdePEnero = []
+        print("Fecha no valida :" + print_fecha(y))
+print("-------------")
+pruebasDesdePEnero = [(2010, 3, 15), (1582, 3, 15), (1581, 3, 15), (2010, 13, 15), (2004, 2, 29), (2005, 2, 29), (2004, 5, 2)]
 
 for i in pruebasDesdePEnero:
-    print("El número de dias que han pasado desde " + print_fecha(i) + "es" + print_fecha(dias_desde_primero_enero(i)))
+    if fecha_es_valida(i):
+        print("El número de dias que han pasado desde " + print_fecha(i) + " es " + str(dias_desde_primero_enero(i)))
+    else:
+        print("Fecha no valida :" + print_fecha(i))

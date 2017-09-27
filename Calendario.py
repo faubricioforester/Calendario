@@ -38,11 +38,11 @@ def dia_siguiente(fecha):
         año = fecha[0]
 
         if fecha_es_valida( ( año, mes, dia +1 ) ):
-            x = ( año, mes,dia + 1)
-            return x
+            return ( año, mes,dia + 1)
+
         elif dia == 31 and mes == 12:
-            x = (año +1, 1, 1)
-            return x
+            return (año +1, 1, 1)
+
         else:
             return (año, mes + 1, 1)
 
@@ -61,15 +61,16 @@ def dias_desde_primero_enero(fecha):
 
     if mes <= 1: #Si el mes es Enero solo es necesario contar los dias
         return dia - 1
-    elif bisiesto(año) and mes >=3: #La variable principal para el calculo se si el año es bisiesto
+    elif bisiesto(año) and mes >= 3: #La variable principal para el calculo se si el año es bisiesto
         cont = 0
-        for x in range(mes - 1):
+        for x in range(1, mes):
             cont += LIMITES_MENSUALES[x]
         return cont + 1 + dia
     else:
         cont = 0
-        for x in range(mes - 1):
+        for x in range(1, mes):
             cont += LIMITES_MENSUALES[x]
+
         return cont + dia
 
 
@@ -98,10 +99,9 @@ def dia_primero_enero(año):
 
         dia_correspondiente = (cantidad_de_dias_movidos_por_año % 7)
         
-        print("El dia del primero de enero del año: "+str(año)+ " es "+ str(dia_correspondiente))
+        return dia_correspondiente
 
     else:
         print("Año introducido no válido")
 
-    return 
 
